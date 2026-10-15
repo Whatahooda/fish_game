@@ -1,0 +1,1 @@
+CombatZoneSetWidth(combat_zone_width - 50);

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scptTime",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scptTime",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

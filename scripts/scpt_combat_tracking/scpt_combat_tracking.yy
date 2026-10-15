@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scpt_combat_tracking",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scpt_combat_tracking",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Combat/source/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

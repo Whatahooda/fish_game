@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scpt_mouse",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scpt_mouse",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Mouse/source/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

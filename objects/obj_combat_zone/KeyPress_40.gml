@@ -1,0 +1,1 @@
+CombatZoneSetHeight(combat_zone_height - 50);

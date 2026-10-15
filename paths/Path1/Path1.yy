@@ -1,0 +1,20 @@
+{
+  "$GMPath":"",
+  "%Name":"Path1",
+  "closed":true,
+  "kind":1,
+  "name":"Path1",
+  "parent":{
+    "name":"Fish-Game",
+    "path":"Fish-Game.yyp",
+  },
+  "points":[
+    {"speed":100.0,"x":32.0,"y":0.0,},
+    {"speed":100.0,"x":0.0,"y":64.0,},
+    {"speed":100.0,"x":32.0,"y":128.0,},
+    {"speed":100.0,"x":64.0,"y":64.0,},
+  ],
+  "precision":4,
+  "resourceType":"GMPath",
+  "resourceVersion":"2.0",
+}

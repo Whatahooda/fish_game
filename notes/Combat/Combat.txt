@@ -1,0 +1,21 @@
+Function Call to begin combat
+
+Needs to specifiy combat type/fish
+As well as player stats, such as upgrades and other changes from base stats
+
+Then we "pause" the game
+Spawn in our combat area
+
+Maybe have a countdown
+Then begin the fight!
+
+The fight consists of:
+	Fishing Bobber/Hook
+	Catch/Reel Zone
+	Progress Bar
+	Zone Area
+	Fish "Portrait"
+	Fish Behaviour/Attacks and such
+	Keep track of how well the player does. Idea: Combat duration * hits taken?
+
+There are 2 states, catching the fish and loss.

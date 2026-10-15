@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scpt_draw",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scpt_draw",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Combat/source/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

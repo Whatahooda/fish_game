@@ -1,0 +1,11 @@
+{
+  "$GMNotes":"v1",
+  "%Name":"Combat",
+  "name":"Combat",
+  "parent":{
+    "name":"Planning",
+    "path":"folders/Planning.yy",
+  },
+  "resourceType":"GMNotes",
+  "resourceVersion":"2.0",
+}

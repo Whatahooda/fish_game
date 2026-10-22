@@ -59,6 +59,20 @@ function CombatZoneEnabled(_enabled)
 	draw_combat_zone = _enabled;
 }
 
+
+/**
+ * CombatZoneGetCornerPosition Returns the room coordinates from the top left corner of the zone plus the provided _relative_coords
+ * @param {any*} _relative_coords Description
+ */
+function CombatZoneGetCornerPosition(_relative_coords)
+{
+	var _ret_val = new Vector2D(
+		x - combat_zone_width / 2 + _relative_coords.vx,
+		y - combat_zone_height / 2 + _relative_coords.vy
+	);
+	return _ret_val;
+}
+
 function CombatZoneCleanUp()
 {
 	CombatZoneEnabled(false);

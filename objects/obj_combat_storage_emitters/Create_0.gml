@@ -26,7 +26,7 @@ _emitter = new CombatEmitterData("basic_left",
 		new Vector2D(0, 0)
 	),
 	0.5,
-	obj_proj_bullet_basic,
+	obj_bullet_basic,
 	-1
 );
 AddCombatEmitter(_emitter);
@@ -40,7 +40,7 @@ _emitter = new CombatEmitterData("basic_right",
 		new Vector2D(180, 180)
 	),
 	0.5,
-	obj_proj_bullet_basic,
+	obj_bullet_basic,
 	-1
 );
 AddCombatEmitter(_emitter);
@@ -54,7 +54,7 @@ _emitter = new CombatEmitterData("basic_top",
 		new Vector2D(270, 270)
 	),
 	0.5,
-	obj_proj_bullet_basic,
+	obj_bullet_basic,
 	-1
 );
 AddCombatEmitter(_emitter);
@@ -68,7 +68,7 @@ _emitter = new CombatEmitterData("basic_bottom",
 		new Vector2D(90, 90)
 	),
 	0.5,
-	obj_proj_bullet_basic,
+	obj_bullet_basic,
 	-1
 );
 AddCombatEmitter(_emitter);
@@ -77,14 +77,14 @@ _emitter = new CombatEmitterData("boomerang",
 	new Vector2D(obj_combat_zone.x, obj_combat_zone.y),
 	new CombatSpawnRegion(obj_combat_zone.x,
 		obj_combat_zone.y,
-		new Vector2D(-obj_combat_zone.combat_zone_width / 2, obj_combat_zone.combat_zone_width / 2),
-		new Vector2D(obj_combat_zone.combat_zone_height / 2 + 16, obj_combat_zone.combat_zone_height / 2 + 48),
+		new Vector2D(0, 0),
+		new Vector2D(0, 0),
 		new Vector2D(90, 90)
 	),
 	0.5,
-	obj_proj_bullet_boomerang_straight,
+	obj_bullet_boomerang1,
 	-1,
-	-1,
+	5,
 	true
 );
 AddCombatEmitter(_emitter);

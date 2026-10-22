@@ -1,9 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"obj_proj_bullet_boomerang_straight",
+  "%Name":"obj_bullet_boomerang_straight",
   "eventList":[],
   "managed":true,
-  "name":"obj_proj_bullet_boomerang_straight",
+  "name":"obj_bullet_boomerang_straight",
   "overriddenProperties":[
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_combat_projectile","path":"objects/obj_combat_projectile/obj_combat_projectile.yy",},"propertyId":{"name":"damage","path":"objects/obj_combat_projectile/obj_combat_projectile.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"1",},
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_combat_projectile","path":"objects/obj_combat_projectile/obj_combat_projectile.yy",},"propertyId":{"name":"knockback","path":"objects/obj_combat_projectile/obj_combat_projectile.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"1",},
@@ -18,8 +18,8 @@
     "path":"folders/Combat/source/Objects/Entities/Projectiles/Bullets.yy",
   },
   "parentObjectId":{
-    "name":"obj_proj_bullet_basic",
-    "path":"objects/obj_proj_bullet_basic/obj_proj_bullet_basic.yy",
+    "name":"obj_bullet_basic",
+    "path":"objects/obj_bullet_basic/obj_bullet_basic.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

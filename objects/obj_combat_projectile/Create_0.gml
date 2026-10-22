@@ -1,6 +1,16 @@
+#macro PATH_DEFAULT_BOX_WIDTH 128
+#macro PATH_DEFAULT_BOX_HEIGHT 128
+
 active = true;
+do_move_step = true;
 destroy_when_finished = false;
 close_call = false;
+
+follow_path = false;
+projectile_path = undefined;
+spawn_on_path = false;
+on_path_end = path_action_stop;
+path_speed = 30;
 
 // The multiplier for how the projectile travels through time (delta_time stuff kinda/not really)
 time_scale = 1.0;
@@ -8,6 +18,9 @@ projectile_current_time = 0;
 
 true_x = x;
 true_y = y;
+
+start_x = 0;
+start_y = 0;
 
 offset_x = 0;
 offset_y = 0;
@@ -22,8 +35,21 @@ ts_close_call = time_source_create(time_source_game, 0.5, time_source_units_seco
 
 function ProjectileStart(_x, _y, _direction)
 {
-	true_x = _x;
-	true_y = _y;
+	if (spawn_on_path)
+	{
+		var _spawn_coords = ProjectileGetPathStart(projectile_path);
+		true_x = _spawn_coords.vx;
+		true_y = _spawn_coords.vy;
+		start_x = true_x;
+		start_y = true_y;
+		instance_create_layer(true_x, true_y, "DEBUG", obj_debug_cross);
+	}
+	else
+	{	
+		true_x = _x;
+		true_y = _y;
+	}
+	
 	if (aim_at_player) target_direction = CombatGetDirectionToPlayer(x, y);
 	else target_direction = _direction;
 	if (time_source_exists(ts_lifetime))
@@ -32,8 +58,13 @@ function ProjectileStart(_x, _y, _direction)
 		time_source_start(ts_lifetime);
 	}
 	
+	x = true_x + offset_x;
+	y = true_y + offset_y;
+	
 	visible = true;
 	active = true;
+	if (follow_path) path_start(projectile_path, path_speed, on_path_end, false);
+	
 }
 
 function ProjectileFinish()
@@ -72,6 +103,31 @@ function ProjectileCombatCompleted()
 	fric = random_range(0.9, .975);
 	fade = true;
 	image_alpha = random_range(1, 1.5);
+}
+
+/**
+ * ProjectileSetPathVars Sets the related path variables, mainly so I don't forget what needs to be set
+ * @param {Bool} _follow Set to true to follow a path
+ * @param {Asset.GMPath} _path_id
+ * @param {Bool} _spawn_on_path Set to true to spawn at the start of the path relative to the combat zone
+ * @param {Constant.PathAction} _path_end_action
+ * @param {Real} _path_speed
+ */
+function ProjectileSetPathVars(_follow = false, _path_id = undefined, _spawn_on_path = false, _path_end_action = path_action_stop, _path_speed = 5)
+{
+	follow_path = _follow;
+	projectile_path = _path_id;
+	spawn_on_path = _spawn_on_path;
+	on_path_end = _path_end_action;
+	path_speed = _path_speed;
+}
+
+function ProjectileGetPathStart(_path)
+{
+	var _pathx = path_get_x(_path, 0);
+	var _pathy = path_get_y(_path, 0);
+	var _starting_pos = obj_combat_zone.CombatZoneGetCornerPosition(new Vector2D(_pathx, _pathy));
+	return _starting_pos;
 }
 
 

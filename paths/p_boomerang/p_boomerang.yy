@@ -1,0 +1,19 @@
+{
+  "$GMPath":"",
+  "%Name":"p_boomerang",
+  "closed":false,
+  "kind":1,
+  "name":"p_boomerang",
+  "parent":{
+    "name":"Paths",
+    "path":"folders/Combat/source/Paths.yy",
+  },
+  "points":[
+    {"speed":100.0,"x":-6.0,"y":8.0,},
+    {"speed":50.0,"x":438.0,"y":200.0,},
+    {"speed":100.0,"x":-6.0,"y":391.0,},
+  ],
+  "precision":4,
+  "resourceType":"GMPath",
+  "resourceVersion":"2.0",
+}

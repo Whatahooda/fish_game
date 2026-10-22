@@ -1,11 +1,11 @@
 {
   "$GMObject":"",
-  "%Name":"obj_proj_bullet_basic",
+  "%Name":"obj_bullet_basic",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_proj_bullet_basic",
+  "name":"obj_bullet_basic",
   "overriddenProperties":[
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_combat_projectile","path":"objects/obj_combat_projectile/obj_combat_projectile.yy",},"propertyId":{"name":"damage","path":"objects/obj_combat_projectile/obj_combat_projectile.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"1",},
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_combat_projectile","path":"objects/obj_combat_projectile/obj_combat_projectile.yy",},"propertyId":{"name":"knockback","path":"objects/obj_combat_projectile/obj_combat_projectile.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"1",},

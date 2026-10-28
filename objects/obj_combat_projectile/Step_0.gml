@@ -1,6 +1,7 @@
 if (active)
 {
 	projectile_current_time += GetDeltaTimeSeconds() * time_scale;
+	// Feather disable once GM1019
 	if (do_move_step) ProjectileMoveStep(projectile_current_time);
 	if (x < 0 ||
 		x > room_width ||

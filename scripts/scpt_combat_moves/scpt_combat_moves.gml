@@ -18,6 +18,13 @@ enum COMBAT_ZONE_POSITIONS
 	BOTTOM
 }
 
+function CombatSpawnData(_x, _y, _direction) constructor
+{
+	spawn_x = _x;
+	spawn_y = _y;
+	spawn_direction = _direction;
+}
+
 /**
  * CombatSpawnRegion Represents a region for creating instances
  * @param {Real} _x Description
@@ -34,17 +41,12 @@ function CombatSpawnRegion(_x, _y, _horizontal_region, _vertical_region, _direct
 	vertical_region = _vertical_region;
 	direction_region = _direction_region;
 	
-	static GetSpawnX = function(_relative = true)
+	function GetSpawnData(_relative = true)
 	{
-		return (_relative) ? origin_x + random_range(horizontal_region.vx, horizontal_region.vy) : random_range(horizontal_region.vx, horizontal_region.vy);
-	}
-	static GetSpawnY = function(_relative = true)
-	{
-		return (_relative) ? origin_y + random_range(vertical_region.vx, vertical_region.vy) : random_range(vertical_region.vx, vertical_region.vy);
-	}
-	static GetSpawnDirection = function()
-	{
-		return random_range(direction_region.vx, direction_region.vy);
+		var _x = (_relative) ? origin_x + random_range(horizontal_region.vx, horizontal_region.vy) : random_range(horizontal_region.vx, horizontal_region.vy);
+		var _y = (_relative) ? origin_y + random_range(vertical_region.vx, vertical_region.vy) : random_range(vertical_region.vx, vertical_region.vy);
+		var _dir = random_range(direction_region.vx, direction_region.vy);
+		return new CombatSpawnData(_x, _y, _dir);
 	}
 }
 
@@ -54,17 +56,16 @@ function CombatSpawnRegion(_x, _y, _horizontal_region, _vertical_region, _direct
  * @param {Real} _y Description
  * @param {Struct.Vector2D} _angle_region Description
  * @param {Struct.Vector2D} _distance_region Description
- * @param {Struct.Vector2D} _is_projectile_direction_different
- * @param {Struct.Vector2D} _projectile_direction
+ * @param {Bool} _do_180_projectile_angle	Set to true if you want to add 180 to the angle of the CombatSpawnData
  */
-function CombatSpawnRegionCircle(_x, _y, _angle_region, _distance_region, _is_projectile_direction_different = false, _projectile_direction = 0) constructor
+function CombatSpawnRegionCircle(_x, _y, _angle_region, _distance_region, _do_180_projectile_angle = false) constructor
 {
 	origin_x = _x;
 	origin_y = _y;
 	angle_region = _angle_region;
 	distance_region = _distance_region;
 	
-	function GetSpawn(
+	function GetSpawnData(
 		_relative = true,
 		_angle = random_range(angle_region.vx, angle_region.vy),
 		_distance = random_range(distance_region.vx, distance_region.vy)
@@ -72,7 +73,7 @@ function CombatSpawnRegionCircle(_x, _y, _angle_region, _distance_region, _is_pr
 	{	
 		var _x = (_relative) ? origin_x + dcos(_angle) * _distance : dcos(_angle) * _distance;
 		var _y = (_relative) ? origin_y - dsin(_angle) * _distance :  -dsin(_angle) * _distance;
-		return new Vector2D(_x, _y);
+		return new CombatSpawnData(_x, _y, _angle);
 	}
 }
 

@@ -19,12 +19,12 @@ enum COMBAT_ZONE_POSITIONS
 }
 
 /**
- * Function Description
- * @param {any*} _x Description
- * @param {any*} _y Description
- * @param {any*} _horizontal_region Description
- * @param {any*} _vertical_region Description
- * @param {any*} _direction_region Description
+ * CombatSpawnRegion Represents a region for creating instances
+ * @param {Real} _x Description
+ * @param {Real} _y Description
+ * @param {Struct.Vector2D} _horizontal_region Description
+ * @param {Struct.Vector2D} _vertical_region Description
+ * @param {Struct.Vector2D} _direction_region Description
  */
 function CombatSpawnRegion(_x, _y, _horizontal_region, _vertical_region, _direction_region) constructor
 {
@@ -45,6 +45,34 @@ function CombatSpawnRegion(_x, _y, _horizontal_region, _vertical_region, _direct
 	static GetSpawnDirection = function()
 	{
 		return random_range(direction_region.vx, direction_region.vy);
+	}
+}
+
+/**
+ * CombatSpawnRegionCircle Represents a spawn region 
+ * @param {Real} _x Description
+ * @param {Real} _y Description
+ * @param {Struct.Vector2D} _angle_region Description
+ * @param {Struct.Vector2D} _distance_region Description
+ * @param {Struct.Vector2D} _is_projectile_direction_different
+ * @param {Struct.Vector2D} _projectile_direction
+ */
+function CombatSpawnRegionCircle(_x, _y, _angle_region, _distance_region, _is_projectile_direction_different = false, _projectile_direction = 0) constructor
+{
+	origin_x = _x;
+	origin_y = _y;
+	angle_region = _angle_region;
+	distance_region = _distance_region;
+	
+	function GetSpawn(
+		_relative = true,
+		_angle = random_range(angle_region.vx, angle_region.vy),
+		_distance = random_range(distance_region.vx, distance_region.vy)
+	)
+	{	
+		var _x = (_relative) ? origin_x + dcos(_angle) * _distance : dcos(_angle) * _distance;
+		var _y = (_relative) ? origin_y - dsin(_angle) * _distance :  -dsin(_angle) * _distance;
+		return new Vector2D(_x, _y);
 	}
 }
 

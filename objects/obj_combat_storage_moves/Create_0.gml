@@ -36,5 +36,5 @@ _move = new CombatMoveData("basic_zone_middle", ["basic_zone_middle"], undefined
 AddCombatMove(_move);
 
 // Flying Fish Moves
-_move = new CombatMoveData("flying_fish1", ["boomerang"], undefined, undefined);
+_move = new CombatMoveData("flying_fish1", ["boomerang_random_circle"], undefined, undefined);
 AddCombatMove(_move);

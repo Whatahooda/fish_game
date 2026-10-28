@@ -73,13 +73,13 @@ _emitter = new CombatEmitterData("basic_bottom",
 );
 AddCombatEmitter(_emitter);
 
-_emitter = new CombatEmitterData("boomerang",
+_emitter = new CombatEmitterData("boomerang_random_circle",
 	new Vector2D(obj_combat_zone.x, obj_combat_zone.y),
-	new CombatSpawnRegion(obj_combat_zone.x,
+	new CombatSpawnRegionCircle(obj_combat_zone.x,
 		obj_combat_zone.y,
-		new Vector2D(0, 0),
-		new Vector2D(0, 0),
-		new Vector2D(90, 90)
+		new Vector2D(0, 360),
+		new Vector2D(240, 240),
+		true
 	),
 	0.5,
 	obj_bullet_boomerang1,

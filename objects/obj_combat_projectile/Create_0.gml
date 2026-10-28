@@ -63,7 +63,11 @@ function ProjectileStart(_x, _y, _direction)
 	
 	visible = true;
 	active = true;
-	if (follow_path) path_start(projectile_path, path_speed, on_path_end, false);
+	if (follow_path)
+	{
+		path_start(projectile_path, path_speed, on_path_end, false);
+		path_orientation = target_direction;
+	}
 	
 }
 
@@ -112,14 +116,17 @@ function ProjectileCombatCompleted()
  * @param {Bool} _spawn_on_path Set to true to spawn at the start of the path relative to the combat zone
  * @param {Constant.PathAction} _path_end_action
  * @param {Real} _path_speed
+ * @param {Bool} _rotate_path
  */
-function ProjectileSetPathVars(_follow = false, _path_id = undefined, _spawn_on_path = false, _path_end_action = path_action_stop, _path_speed = 5)
+function ProjectileSetPathVars(_follow = false, _path_id = undefined, _spawn_on_path = false, _path_end_action = path_action_stop, _path_speed = 5, _rotate_path = true)
 {
 	follow_path = _follow;
-	projectile_path = _path_id;
+	projectile_path = path_duplicate(_path_id);
 	spawn_on_path = _spawn_on_path;
 	on_path_end = _path_end_action;
 	path_speed = _path_speed;
+	
+	//if (_rotate_path) path_orientation = target_direction;
 }
 
 function ProjectileGetPathStart(_path)

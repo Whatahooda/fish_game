@@ -7,7 +7,8 @@ if (emitter_lifetime > 0) ts_lifetime = time_source_create(time_source_game, emi
 function EmitterTimer()
 {
 	var _projectile = EmitterGetProjectile();
-	_projectile.ProjectileStart(spawn_region.GetSpawnX(), spawn_region.GetSpawnY(), spawn_region.GetSpawnDirection());
+	var _spawn_data = spawn_region.GetSpawnData();
+	_projectile.ProjectileStart(_spawn_data.spawn_x, _spawn_data.spawn_y, _spawn_data.spawn_direction);
 	obj_combat_info.InfoTrack(INFO.PROJECTILES_CREATED, 1);
 	fired_projectiles++;
 }
@@ -21,9 +22,10 @@ function EmitterGetProjectile()
 	
 	if (!instance_exists(_ready_projectile))
 	{
-		_ready_projectile = instance_create_layer(spawn_region.GetSpawnX(), spawn_region.GetSpawnY(), __COMBAT_ACTOR_LAYER, projectile, {
+		var _spawn_data = spawn_region.GetSpawnData();
+		_ready_projectile = instance_create_layer(_spawn_data.spawn_x, _spawn_data.spawn_y, __COMBAT_ACTOR_LAYER, projectile, {
 			aim_at_player: aim_at_player,
-			target_direction: spawn_region.GetSpawnDirection()
+			target_direction: _spawn_data.spawn_direction
 		});
 		array_push(my_projectiles, _ready_projectile);
 	}

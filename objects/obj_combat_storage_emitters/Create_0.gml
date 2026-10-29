@@ -85,7 +85,7 @@ _emitter = new CombatEmitterData("boomerang_random_circle",
 	obj_bullet_boomerang1,
 	-1,
 	5,
-	true
+	false
 );
 AddCombatEmitter(_emitter);
 

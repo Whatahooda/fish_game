@@ -88,6 +88,7 @@
     {"id":{"name":"obj_controller_combat","path":"objects/obj_controller_combat/obj_controller_combat.yy",},},
     {"id":{"name":"obj_controller_game","path":"objects/obj_controller_game/obj_controller_game.yy",},},
     {"id":{"name":"obj_controller_overworld","path":"objects/obj_controller_overworld/obj_controller_overworld.yy",},},
+    {"id":{"name":"obj_debug_arrow","path":"objects/obj_debug_arrow/obj_debug_arrow.yy",},},
     {"id":{"name":"obj_debug_cross","path":"objects/obj_debug_cross/obj_debug_cross.yy",},},
     {"id":{"name":"obj_debug_main","path":"objects/obj_debug_main/obj_debug_main.yy",},},
     {"id":{"name":"obj_debug_player","path":"objects/obj_debug_player/obj_debug_player.yy",},},

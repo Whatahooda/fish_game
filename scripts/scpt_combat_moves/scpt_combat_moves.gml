@@ -64,6 +64,7 @@ function CombatSpawnRegionCircle(_x, _y, _angle_region, _distance_region, _do_18
 	origin_y = _y;
 	angle_region = _angle_region;
 	distance_region = _distance_region;
+	do_180 = _do_180_projectile_angle;
 	
 	function GetSpawnData(
 		_relative = true,
@@ -73,6 +74,7 @@ function CombatSpawnRegionCircle(_x, _y, _angle_region, _distance_region, _do_18
 	{	
 		var _x = (_relative) ? origin_x + dcos(_angle) * _distance : dcos(_angle) * _distance;
 		var _y = (_relative) ? origin_y - dsin(_angle) * _distance :  -dsin(_angle) * _distance;
+		if (do_180) _angle += 180;
 		return new CombatSpawnData(_x, _y, _angle);
 	}
 }

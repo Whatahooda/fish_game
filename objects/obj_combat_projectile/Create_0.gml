@@ -42,16 +42,20 @@ function ProjectileStart(_x, _y, _direction)
 		true_y = _spawn_coords.vy;
 		start_x = true_x;
 		start_y = true_y;
-		instance_create_layer(true_x, true_y, "DEBUG", obj_debug_cross);
 	}
 	else
 	{	
 		true_x = _x;
 		true_y = _y;
+		start_x = true_x;
+		start_y = true_y;
 	}
 	
 	if (aim_at_player) target_direction = CombatGetDirectionToPlayer(x, y);
 	else target_direction = _direction;
+	
+	instance_create_layer(true_x, true_y, "DEBUG", obj_debug_arrow, {image_angle: target_direction});
+	
 	if (time_source_exists(ts_lifetime))
 	{
 		time_source_reset(ts_lifetime);
@@ -67,6 +71,7 @@ function ProjectileStart(_x, _y, _direction)
 	{
 		path_start(projectile_path, path_speed, on_path_end, false);
 		path_orientation = target_direction;
+		//path_rotate(projectile_path, target_direction);
 	}
 	
 }

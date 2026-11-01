@@ -22,6 +22,9 @@ true_y = y;
 start_x = 0;
 start_y = 0;
 
+last_x = x;
+last_y = y;
+
 offset_x = 0;
 offset_y = 0;
 

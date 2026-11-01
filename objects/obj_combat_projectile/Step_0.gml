@@ -13,8 +13,6 @@ if (active)
 		ProjectileFinish();
 	}
 	
-	if (face_movement_direction && image_angle != target_direction) image_angle = target_direction;
-	
 	if (fade)
 	{
 		image_alpha -= fade_strength * GetDeltaTimeSeconds();

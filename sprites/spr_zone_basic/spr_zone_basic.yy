@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"zones",
-    "path":"folders/Combat/assets/Sprites/projectiles/zones.yy",
+    "name":"zone",
+    "path":"folders/Combat/assets/Sprites/projectiles/zone.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

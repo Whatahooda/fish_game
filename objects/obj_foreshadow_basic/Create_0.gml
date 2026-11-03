@@ -10,6 +10,8 @@ function ProjectileWarningDone()
 		time_source_reset(ts_lifetime);
 		time_source_start(ts_lifetime);
 	}
+	
+	SetHitboxEnabled(true);
 }
 
 function ProjectileStart(_x, _y, _direction)
@@ -28,11 +30,8 @@ function ProjectileStart(_x, _y, _direction)
 	
 	visible = true;
 	active = true;
-	if (follow_path)
-	{
-		path_start(projectile_path, path_speed, on_path_end, false);
-		path_orientation = target_direction;
-		//path_rotate(projectile_path, target_direction);
-	}
+	SetHitboxEnabled(false);
+	
+	// Animate warning
 	
 }

@@ -221,6 +221,11 @@ function ProjectileGetPathStart(_path)
 		if (_is_add) direction_jerk += _new_val;
 		else direction_jerk = _new_val;
 	}
+	
+	function SetHitboxEnabled(_is_enabled, _mask_index = sprite_index)
+	{
+		(_is_enabled) ? mask_index = _mask_index : mask_index = -1;
+	}
 }
 
 // Move Functions
